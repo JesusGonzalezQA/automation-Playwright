@@ -21,6 +21,11 @@ export class TaskPage {
         await this.page.click('css=button >> text =Create')
     }
 
+    async toggle(taskName: string) {
+        const target = this.page.locator(`xpath=//p[text()="${taskName}"]/..//button[contains(@class, "Toggle")]`)
+        await target.click()
+    }
+
     async sholdHaveText(taskName: string) {
 
         const target = this.page.locator(`css=.task-item p >> text=${taskName}`)
@@ -30,6 +35,12 @@ export class TaskPage {
     async alertHaveText(text: string) {
         const target = this.page.locator(`.swal2-html-container`)
         await expect(target).toHaveText(text)
+
+    }
+
+    async shlouldBeDone(taskName: string) {
+       const target = this.page.getByText(taskName)
+       await expect(target).toHaveCSS('text-decoration-line', 'line-through')
 
     }
 
