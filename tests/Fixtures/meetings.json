@@ -1,0 +1,9 @@
+{
+    "whatsapp": {
+        "contactOrGroup": "My Group"
+    },
+    "teams": {
+        "meetingUrl": "https://teams.microsoft.com/l/meetup-join/YOUR_MEETING_LINK",
+        "displayName": "Automation Agent"
+    }
+}
